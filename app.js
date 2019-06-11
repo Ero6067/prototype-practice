@@ -5,15 +5,17 @@ function Person(firstName, lastName) {
   this.lastName = lastName;
 }
 
-//Greeting
+//Adding a Greeting() to the prototype
 Person.prototype.greeting = function() {
   return `Hello there ${this.firstName} ${this.lastName}`;
 }
 
+//Create a new Person Obj
 const person1 = new Person( 'John', 'Doe' )
 
 //Customer Constructor
 function Customer(firstName, lastName, phone, membership) {
+  //call() is calling a function of the owner obj
   Person.call(this, firstName, lastName);
 
   this.phone = phone;
